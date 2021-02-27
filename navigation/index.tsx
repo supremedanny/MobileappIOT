@@ -29,6 +29,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{
         headerStyle: {
             backgroundColor: 'blue'
+
         }
     }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
