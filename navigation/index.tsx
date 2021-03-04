@@ -5,11 +5,13 @@ import { ColorSchemeName } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+//import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import {View, Text} from 'react-native';
 
 import LandPageScreen from '../screens/LandPageScreen';
+import LogInScreen from "../screens/LogInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
 
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -24,7 +26,19 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
             <Stack.Screen
                 name= "Landing"
                 component= {LandPageScreen}
-                options={{headerShown: false}}
+                options={{ headerTitle: 'Mobile App IOT'}}
+            />
+
+            <Stack.Screen
+                name= "LogIn"
+                component= {LogInScreen}
+                options={{ headerTitle: 'Log In', headerBackTitle: 'Back'}}
+            />
+
+            <Stack.Screen
+                name = "SignUp"
+                component={SignUpScreen}
+                options={{headerTitle: 'Sign Up', headerBackTitle: 'Back'}}
             />
         </Stack.Navigator>
     </NavigationContainer>

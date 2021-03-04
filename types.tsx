@@ -1,7 +1,9 @@
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
-  LandingPage: undefined;
+  Landing: undefined;
+  LogIn: undefined;
+  SignUp: undefined;
 };
 
 // The below types can be deleted, though were kept commented for future reference.
