@@ -14,12 +14,12 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
 
             <Button
                 title = {"Log In"} onPress={()=> navigation.navigate('LogIn')}
-                color = '#9370db'
+                color = '#fff'
 
             />
             <Button
                 title = {"Sign Up"} onPress={()=> navigation.navigate('SignUp')}
-                color = '#9370db'
+                color = '#fff'
             />
             {/*TODO: Remove all the above prints from the screens.*/}
         </View>
@@ -29,7 +29,7 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#8080C0',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
