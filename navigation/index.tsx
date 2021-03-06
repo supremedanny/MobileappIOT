@@ -26,7 +26,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
             <Stack.Screen
                 name= "Landing"
                 component= {LandPageScreen}
-                options={{ headerTitle: 'Mobile App IOT'}}
+                options={{ headerTitle: 'Mobile App IOT', headerShown: false}}
             />
 
             <Stack.Screen

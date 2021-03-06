@@ -8,7 +8,7 @@ import {TextField} from "@material-ui/core";
 
 
 
-export default function LogInScreen({navigation,}: StackScreenProps<RootStackParamList, 'LogIn'> ){
+export default function LogInScreen({navigation,}: StackScreenProps<RootStackParamList, any> ){
     return(
         <View style={styles.container}>
             <Text>--WIP--</Text>

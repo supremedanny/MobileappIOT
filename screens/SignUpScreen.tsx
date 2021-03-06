@@ -6,7 +6,7 @@ import { RootStackParamList } from '../types';
 import Navigation from "../navigation";
 
 
-export default function SignUpScreen({navigation,}: StackScreenProps<RootStackParamList, 'SignUp'> ){
+export default function SignUpScreen({navigation,}: StackScreenProps<RootStackParamList, any> ){
     return(
         <View style={styles.container}>
             <Text>--WIP--</Text>
