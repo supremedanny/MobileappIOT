@@ -1,15 +1,14 @@
-import { StackScreenProps } from '@react-navigation/stack';
+import {StackScreenProps} from '@react-navigation/stack';
 import * as React from 'react';
 import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-import { RootStackParamList } from '../types';
+import {RootStackParamList} from '../types';
 import Navigation from "../navigation";
 import {TextField} from "@material-ui/core";
 
 
-
-export default function LogInScreen({navigation,}: StackScreenProps<RootStackParamList, any> ){
-    return(
+export default function LogInScreen({navigation,}: StackScreenProps<RootStackParamList, any>) {
+    return (
         <View style={styles.container}>
             <Text>--WIP--</Text>
         </View>

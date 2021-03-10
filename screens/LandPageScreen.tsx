@@ -27,6 +27,12 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
                 <Text style = {styles.SUBtext}>Sign Up</Text>
             </Pressable>
 
+            <Pressable
+                style = {styles.HomeButton}
+                onPress= {()=> {navigation.navigate('Root')}}>
+                <Text style = {styles.HBtext}>Home</Text>
+            </Pressable>
+
         </View>
     );
 }
@@ -94,5 +100,24 @@ const styles = StyleSheet.create({
         color: '#8080C0',
         fontWeight: '500',
         fontSize: 25,
+    },
+
+    HomeButton: {
+        // TODO: Temporary
+        top: '35%',
+        borderRadius: 10,
+        borderLeftWidth: 100,
+        borderRightWidth: 100,
+        borderTopWidth: 10,
+        resizeMode: 'cover',
+        borderBottomWidth: 10,
+        borderColor: '#fff',
+        backgroundColor: '#fff',
+    },
+    HBtext: { //HB as in home button
+        color: '#8080C0',
+        fontWeight: '500',
+        fontSize: 21,
+
     },
 });
