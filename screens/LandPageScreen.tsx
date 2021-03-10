@@ -40,7 +40,7 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#8080C0',
+        backgroundColor: '#60A268',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
         borderRightWidth: 120,
         borderTopWidth: 10,
         borderBottomWidth: 10,
-        borderColor: '#fff',
-        backgroundColor: '#fff',
+        borderColor: '#E7FBEB',
+        backgroundColor: '#E7FBEB',
         resizeMode: "contain",
     },
     LBtext: { //L as in "Login"
-        color: '#8080C0',
-        fontWeight: '500',
+        color: '#254E0A',
+        fontWeight: 'bold',
         fontSize: 31,
 
     },
@@ -93,12 +93,12 @@ const styles = StyleSheet.create({
         borderTopWidth: 10,
         resizeMode: 'cover',
         borderBottomWidth: 10,
-        borderColor: '#fff',
-        backgroundColor: '#fff',
+        borderColor: '#397433',
+        backgroundColor: '#397433',
     },
     SUBtext: { //SU as in "sign up"
-        color: '#8080C0',
-        fontWeight: '500',
+        color: '#E5F9E9',
+        fontWeight: 'bold',
         fontSize: 25,
     },
 
@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
         borderTopWidth: 10,
         resizeMode: 'cover',
         borderBottomWidth: 10,
-        borderColor: '#fff',
-        backgroundColor: '#fff',
+        borderColor: '#E7FBEB',
+        backgroundColor: '#E7FBEB',
     },
     HBtext: { //HB as in home button
-        color: '#8080C0',
-        fontWeight: '500',
+        color: '#397433',
+        fontWeight: 'bold',
         fontSize: 21,
 
     },
