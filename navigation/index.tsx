@@ -45,7 +45,7 @@ export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName
 
                 <Stack.Screen
                     name="Root" component={BottomTabNavigator}
-                    options={{headerShown: false}}
+                    options={{headerShown: false,gestureEnabled: false}}
                 />
 
             </Stack.Navigator>

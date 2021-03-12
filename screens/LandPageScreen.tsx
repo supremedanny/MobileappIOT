@@ -11,7 +11,7 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
     return (
         <View style={styles.container}>
             <Image
-                source = {require('../assets/images/trash-can.png')}
+                source = {require('../assets/images/Recycling_Bin.png')}
                 style = {styles.image}
             />
 
@@ -59,20 +59,18 @@ const styles = StyleSheet.create({
         color: '#2e78b7',
     },
     image: {
-
-        width: '90%',
+        width: '69%',
         height: '69%',
-        marginTop: '0%',
-        top: '5%',
+        top: '10%',
         resizeMode: 'contain',
         position: 'absolute',
-        backgroundColor: undefined, //only add a color to see where the border of the image really is, like a "hitbox"
+        backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     loginButton:  {
         top: '31%',
-        borderRadius: 10,
-        borderLeftWidth: 120,
-        borderRightWidth: 120,
+        borderRadius: 10,//how round the button is on the corners
+        borderLeftWidth: 100,
+        borderRightWidth: 100,
         borderTopWidth: 10,
         borderBottomWidth: 10,
         borderColor: '#E7FBEB',
@@ -83,25 +81,23 @@ const styles = StyleSheet.create({
         color: '#254E0A',
         fontWeight: 'bold',
         fontSize: 31,
-
     },
     SignUpButton: {
         top: '33%',
-        borderRadius: 10,
-        borderLeftWidth: 100,
-        borderRightWidth: 100,
+        borderRadius: 10,//how round the button is on the corners
+        borderLeftWidth:90,
+        borderRightWidth: 90,
         borderTopWidth: 10,
-        resizeMode: 'cover',
         borderBottomWidth: 10,
         borderColor: '#397433',
         backgroundColor: '#397433',
+        resizeMode: "contain",
     },
     SUBtext: { //SU as in "sign up"
         color: '#E5F9E9',
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 31,
     },
-
     HomeButton: {
         // TODO: Temporary
         top: '35%',
@@ -109,15 +105,14 @@ const styles = StyleSheet.create({
         borderLeftWidth: 100,
         borderRightWidth: 100,
         borderTopWidth: 10,
-        resizeMode: 'cover',
+        resizeMode: 'contain',
         borderBottomWidth: 10,
         borderColor: '#E7FBEB',
         backgroundColor: '#E7FBEB',
     },
-    HBtext: { //HB as in home button
+    HBtext: { //HB as in "home button"
         color: '#397433',
         fontWeight: 'bold',
         fontSize: 21,
-
     },
 });
