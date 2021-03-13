@@ -9,6 +9,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from "../screens/TabThreeScreen";
 import {BottomTabParamList, TabOneParamList, TabThreeParamList, TabTwoParamList} from '../types';
+import { AntDesign, Feather ,FontAwesome, } from '@expo/vector-icons';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -19,26 +20,29 @@ export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="TabTwo"//the main one will be the tab two
-            tabBarOptions={{activeTintColor: Colors[colorScheme].tint}}>
+            tabBarOptions={{activeTintColor: '#60A268', inactiveTintColor: 'gray', labelPosition: "below-icon"}}>
             <BottomTab.Screen
                 name="TabOne"
                 component={TabOneNavigator}
                 options={{
-                    tabBarIcon: ({color}) => <TabBarIcon name="ios-code" color={color}/>,
+                    tabBarLabel: 'QR Code',
+                    tabBarIcon: ({color}) => <AntDesign name="qrcode" size={36} color={color}/>
                 }}
             />
             <BottomTab.Screen
                 name="TabTwo"
                 component={TabTwoNavigator}
                 options={{
-                    tabBarIcon: ({color}) => <TabBarIcon name="ios-code" color={color}/>,
+                    tabBarLabel: 'Rewards',
+                    tabBarIcon: ({color}) => <FontAwesome name="dollar" size={32} color={color}/>
                 }}
             />
             <BottomTab.Screen
                 name="TabThree"
                 component={TabThreeNavigator}
                 options={{
-                    tabBarIcon: ({color}) => <TabBarIcon name="ios-code" color={color}/>,
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({color}) => <Feather name="user" size={38} color={color}/>
                 }}
             />
         </BottomTab.Navigator>
@@ -61,9 +65,7 @@ function TabOneNavigator() {
             <TabOneStack.Screen
                 name="TabOneScreen"
                 component={TabOneScreen}
-                // TODO: Change headerShown to false to remove back button on tab 1
-                options={{headerTitle: 'Tab One Title', headerShown: true, headerBackTitleVisible: false}}
-
+                options={{headerTitle: 'Tab One Title', headerShown: false, headerBackTitleVisible: false}}
             />
         </TabOneStack.Navigator>
     );

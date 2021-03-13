@@ -5,7 +5,6 @@ import {ColorSchemeName} from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import {RootStackParamList} from '../types';
-//import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import {View, Text} from 'react-native';
 
@@ -45,7 +44,7 @@ export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName
 
                 <Stack.Screen
                     name="Root" component={BottomTabNavigator}
-                    options={{headerShown: false,gestureEnabled: false}}
+                    options={{headerShown: false,gestureEnabled: true}}
                 />
 
             </Stack.Navigator>
