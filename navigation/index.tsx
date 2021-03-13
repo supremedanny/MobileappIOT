@@ -33,7 +33,7 @@ export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName
                 <Stack.Screen
                     name="LogIn"
                     component={LogInScreen}
-                    options={{headerTitle: 'Log In', headerBackTitle: 'Back'}}
+                    options={{headerTitle: 'Log In', headerBackTitle: 'Back', headerTransparent: true}}
                 />
 
                 <Stack.Screen
