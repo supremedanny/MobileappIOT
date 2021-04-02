@@ -1,11 +1,8 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import * as React from 'react';
 import { Pressable, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {NavigationContainer} from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
 
 import { RootStackParamList } from '../types';
-import Navigation from "../navigation";
 
 export default function LandPageScreen( {navigation,}: StackScreenProps<RootStackParamList, any> ) {
     return (
@@ -44,19 +41,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
-    },
-    title: {
-        color: 'cyan',
-        fontSize: 40,
-        fontWeight: 'bold',
-    },
-    link: {
-        marginTop: 15,
-        paddingVertical: 15,
-    },
-    linkText: {
-        fontSize: 14,
-        color: '#2e78b7',
     },
     image: {
         width: '69%',

@@ -17,13 +17,14 @@ import BottomTabNavigator from "./BottomTabNavigator";
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 
-const Stack = createStackNavigator();
+export const Stack = createStackNavigator();
 
 
-export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
+export default function Navigation({isAuth}) {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Landing">
+            <Stack.Navigator initialRouteName={(isAuth) ? "Root" : "Landing" }>
+                {/*When navigation starts, it will set the initialRoute depending on the user's login state.*/}
                 <Stack.Screen
                     name="Landing"
                     component={LandPageScreen}
@@ -44,7 +45,7 @@ export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName
 
                 <Stack.Screen
                     name="Root" component={BottomTabNavigator}
-                    options={{headerShown: false,gestureEnabled: true}}
+                    options={{headerShown: false,gestureEnabled: false,}}
                 />
 
             </Stack.Navigator>
