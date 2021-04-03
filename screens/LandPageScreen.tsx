@@ -24,11 +24,6 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
                 <Text style = {styles.SUBtext}>Sign Up</Text>
             </Pressable>
 
-            <Pressable
-                style = {styles.HomeButton}
-                onPress= {()=> {navigation.navigate('Root')}}>
-                <Text style = {styles.HBtext}>Home</Text>
-            </Pressable>
 
         </View>
     );

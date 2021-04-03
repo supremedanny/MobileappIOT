@@ -12,6 +12,7 @@ import LandPageScreen from '../screens/LandPageScreen';
 import LogInScreen from "../screens/LogInScreen";
 import SignUpScreen from "../screens/SignUpScreen";
 import BottomTabNavigator from "./BottomTabNavigator";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -34,13 +35,19 @@ export default function Navigation({isAuth}) {
                 <Stack.Screen
                     name="LogIn"
                     component={LogInScreen}
-                    options={{headerTitle: 'Log In', headerBackTitle: 'Back', headerTransparent: true}}
+                    options={{headerTitle: null, headerBackTitle: 'Back', headerTransparent: true}}
                 />
 
                 <Stack.Screen
                     name="SignUp"
                     component={SignUpScreen}
                     options={{headerTitle: 'Sign Up', headerBackTitle: 'Back'}}
+                />
+
+                <Stack.Screen
+                    name={"ForgotPassword"}
+                    component={ForgotPasswordScreen}
+                    options={{headerTitle: 'Forgot Password', headerBackTitle: 'Back'}}
                 />
 
                 <Stack.Screen

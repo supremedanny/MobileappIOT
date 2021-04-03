@@ -6,12 +6,18 @@ import {useState} from "react";
 
 export default function SignUpScreen({navigation}) {
     const [email,setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password,setPassword] = useState('');
     const [password2,setPassword2] = useState('');
 
     return (
         <View style={styles.container}>
             <Text style={styles.text} >Create an account</Text>
+
+            <TextInput style = {styles.name} placeholder="Name"
+                       onChangeText={name => setName(name)
+                       }/>
+
             <TextInput style={styles.emailInput} placeholder="Email"
                        onChangeText={email => setEmail(email)
                        }/>
@@ -30,6 +36,14 @@ export default function SignUpScreen({navigation}) {
                             .then((userCredential) => {
                                 // Signed in
                                 const user = userCredential.user;
+                                firebase.auth().currentUser.updateProfile({
+                                    displayName: name,
+                                }).then(function() {
+                                    // Update successful.
+                                }).catch(function(error) {
+                                    // An error happened.
+                                    alert(error.message);
+                                })
                                 navigation.navigate("Root")
                                 // ...
                             })
@@ -39,7 +53,8 @@ export default function SignUpScreen({navigation}) {
                                 alert(errorMessage);
 
                                 // ..
-                            })}else{
+                            })
+                        }else{
                                 //Passwords didn't match.
                                 alert("Passwords don't match.");//Message displayed can be changed if necessary
                     }}}/>
@@ -60,6 +75,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
         margin: 10,
+    },
+    name: {
+      borderWidth: 1,
+      padding: 10,
+      margin: 5,
+      width: 200
     },
     emailInput: {
         borderWidth: 1,

@@ -1,15 +1,18 @@
 import * as React from 'react';
-import {Button, StyleSheet} from 'react-native';
+import {Button, Image, StyleSheet} from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import {Text, View} from '../components/Themed';
 import * as firebase from "firebase";
 
 export default function TabThreeScreen({navigation}:any) {
+    const user = firebase.auth().currentUser;
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Profile</Text>
+            <Text style={styles.title} >{user?.displayName}</Text>
             {/*Signs out the user and changes screen to Landing.*/}
+
             <Button title="Sign Out" onPress={()=>firebase.auth().signOut().then(() => {
                 // Sign-out successful.
                 navigation.navigate("Landing");
@@ -27,6 +30,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black'
+    },
+    image: {
+        width: '69%',
+        height: '69%',
+        top: '10%',
+        resizeMode: 'contain',
+        position: 'absolute',
+        backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     title: {
         fontSize: 20,

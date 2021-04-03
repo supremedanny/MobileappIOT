@@ -19,7 +19,7 @@ export default function BottomTabNavigator() {
 
     return (
         <BottomTab.Navigator
-            initialRouteName="TabTwo"//the main one will be the tab two
+            initialRouteName="TabOne"//the main one will be the tab two
             tabBarOptions={{activeTintColor: '#60A268', inactiveTintColor: 'gray', labelPosition: "below-icon"}}>
             <BottomTab.Screen
                 name="TabOne"
