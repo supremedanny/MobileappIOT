@@ -14,12 +14,12 @@ export default function LogInScreen({navigation}) {
     return (
         <View style={styles.container}>
 
-            <Text style={styles.titleText}>Log In To Your Account</Text>
-
             <Image
                 source = {require('../assets/images/BINLOGO.png')}
                 style = {styles.image}
             />
+
+            <Text style={styles.titleText}>Log In To Your Account</Text>
 
             <View style={styles.emailContainer}>
                 <Ionicons name="mail" size={24} color="black" />
@@ -74,8 +74,10 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '55%',
         height: '55%',
-        top: '-2%',
+        top: '-10%',
+        marginBottom: '-20%',
         resizeMode: 'contain',
+        //position: 'absolute',
         backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     text: {
@@ -86,8 +88,9 @@ const styles = StyleSheet.create({
     titleText: {
         textAlign: 'center',
         fontSize: 30,
-        marginTop: '25%',
-        marginBottom: '20%',
+        top: '-15%',
+        //marginTop: '-40%',
+        marginBottom: '10%',
         color: '#397433',
         fontWeight: 'bold',
     },
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        top: '-35%',
     },
     emailInput: {
         fontWeight: '700',
@@ -125,6 +129,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 15,
         marginRight:10,
+        top: '-35%',
 
     },
     passwordInput: {
@@ -151,6 +156,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30,
+        top: '-15%',
     }
 });
 
