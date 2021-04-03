@@ -47,7 +47,7 @@ export default function Navigation({isAuth}) {
                 <Stack.Screen
                     name={"ForgotPassword"}
                     component={ForgotPasswordScreen}
-                    options={{headerTitle: 'Forgot Password', headerBackTitle: 'Back'}}
+                    options={{headerTitle: null, headerBackTitle: 'Back', headerTransparent: true}}
                 />
 
                 <Stack.Screen

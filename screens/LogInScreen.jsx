@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     image: {
+        flex: 1,
         width: '55%',
         height: '55%',
         top: '-2%',
         resizeMode: 'contain',
-        position: 'absolute',
         backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     text: {
@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
     titleText: {
         textAlign: 'center',
         fontSize: 30,
-        marginTop: '45%',
-        marginBottom: '10%',
+        marginTop: '25%',
+        marginBottom: '20%',
         color: '#397433',
         fontWeight: 'bold',
     },
