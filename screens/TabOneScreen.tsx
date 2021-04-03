@@ -10,7 +10,11 @@ export default function TabOneScreen() {
   const userID = user?.uid;
   return (
       <SafeAreaView style={styles.container}>
+
+          <Text style={styles.title}>QR Code</Text>
+
         <View style={styles.qrCodeContainer}>
+
           <Text style={styles.title}>Scan the barcode below to collect points.</Text>
 
           <QRCode
