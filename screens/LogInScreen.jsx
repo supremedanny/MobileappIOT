@@ -107,6 +107,8 @@ const styles = StyleSheet.create({
         color: '#397433',
         fontWeight: 'bold',
         fontSize: 12,
+        //top: '-250%',
+        bottom: '230%',
     },
     emailContainer:{
         flexDirection: 'row',
