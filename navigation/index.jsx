@@ -41,7 +41,7 @@ export default function Navigation({isAuth}) {
                 <Stack.Screen
                     name="SignUp"
                     component={SignUpScreen}
-                    options={{headerTitle: 'Sign Up', headerBackTitle: 'Back'}}
+                    options={{headerTitle: null, headerBackTitle: 'Back', headerTransparent: true}}
                 />
 
                 <Stack.Screen

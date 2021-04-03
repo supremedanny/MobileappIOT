@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button, StyleSheet, ScrollView, TextInput, Text, TouchableOpacity, View, Pressable} from 'react-native';
+import {Button, StyleSheet, ScrollView, TextInput, Text, TouchableOpacity, View, Pressable, Image} from 'react-native';
 import {Component, useState} from "react";
 import * as firebase from "firebase";
 
@@ -13,6 +13,13 @@ export default function LogInScreen({navigation}) {
 
     return (
         <View style={styles.container}>
+
+            <Text style={styles.titleText}>Log In To Your Account</Text>
+
+            <Image
+                source = {require('../assets/images/BINLOGO.png')}
+                style = {styles.image}
+            />
 
             <View style={styles.emailContainer}>
                 <Ionicons name="mail" size={24} color="black" />
@@ -63,10 +70,26 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 20,
     },
+    image: {
+        width: '55%',
+        height: '55%',
+        top: '-2%',
+        resizeMode: 'contain',
+        position: 'absolute',
+        backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
+    },
     text: {
         textAlign: 'center',
         fontSize: 30,
         margin: 10,
+    },
+    titleText: {
+        textAlign: 'center',
+        fontSize: 30,
+        marginTop: '45%',
+        marginBottom: '10%',
+        color: '#397433',
+        fontWeight: 'bold',
     },
     forgotPasswordButton: {
         //borderRadius: 10,
@@ -88,7 +111,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     emailInput: {
-        //borderWidth: 1,
         fontWeight: '700',
         color: '#fff',
         borderRadius: 10,
@@ -114,8 +136,6 @@ const styles = StyleSheet.create({
         margin: 5,
         height: 45,
         width: '75%',
-
-        //marginLeft: 10,
     },
     loginText: {
         color: '#397433',

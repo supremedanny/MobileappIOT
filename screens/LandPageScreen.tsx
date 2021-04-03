@@ -6,9 +6,13 @@ import { RootStackParamList } from '../types';
 
 export default function LandPageScreen( {navigation,}: StackScreenProps<RootStackParamList, any> ) {
     return (
+
         <View style={styles.container}>
+
+            <Text style = {styles.titleText}>BIN</Text>
+
             <Image
-                source = {require('../assets/images/Recycling_Bin.png')}
+                source = {require('../assets/images/BIN.png')}
                 style = {styles.image}
             />
 
@@ -37,9 +41,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 20,
     },
+    titleText: {
+        color: '#E7FBEB',
+        fontSize: 150,
+        top: '-10%',
+        fontWeight: 'bold',
+    },
+
     image: {
         width: '69%',
-        height: '69%',
+        height: '74%',
         top: '10%',
         resizeMode: 'contain',
         position: 'absolute',
@@ -71,6 +82,7 @@ const styles = StyleSheet.create({
         borderColor: '#397433',
         backgroundColor: '#397433',
         resizeMode: "contain",
+        marginBottom: 200,
     },
     SUBtext: { //SU as in "sign up"
         color: '#E5F9E9',
