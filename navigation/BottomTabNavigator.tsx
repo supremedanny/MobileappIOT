@@ -34,7 +34,7 @@ export default function BottomTabNavigator() {
                 component={TabTwoNavigator}
                 options={{
                     tabBarLabel: 'Rewards',
-                    tabBarIcon: ({color}) => <FontAwesome name="dollar" size={32} color={color}/>
+                    tabBarIcon: ({color}) => <AntDesign name="gift" size={36} color={color}/>
                 }}
             />
             <BottomTab.Screen
