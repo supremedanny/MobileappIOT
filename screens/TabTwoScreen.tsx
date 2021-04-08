@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center',
-    backgroundColor: '#E7FBEB'
+    //justifyContent: 'center',
+    backgroundColor: '#EEEEEE'
   },
   title: {
     fontSize: 30,
-    fontStyle: 'italic',
+    //fontStyle: 'italic',
     top: '10%',
     fontWeight: 'bold',
     color: 'black'

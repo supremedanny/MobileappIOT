@@ -11,11 +11,11 @@ export default function TabOneScreen() {
   return (
       <SafeAreaView style={styles.container}>
 
+        <View style={styles.titleContainer}>
           <Text style={styles.title}>QR Code</Text>
+        </View>
 
         <View style={styles.qrCodeContainer}>
-
-          <Text style={styles.title}>Scan the barcode below to collect points.</Text>
 
           <QRCode
               //QR code value
@@ -23,12 +23,17 @@ export default function TabOneScreen() {
               {...(userID == undefined) ? alert("Invalid QR Code. Contact support."): undefined}
               //sends alert if user has no UID ("This should never happen.")
               //size of QR Code
-              size={350}
+              size={250}
               bgColor={'black'}
-              fgColor={'white'}
+              fgColor={'#EEEEEE'}
           />
 
         </View>
+
+        <View style={styles.greenContainer}>
+          <Text style={styles.text}>SCAN</Text>
+        </View>
+
       </SafeAreaView>
   );
 }
@@ -38,22 +43,47 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E7FBEB',
+    backgroundColor: '#EEEEEE',
   },
   title: {
-    fontSize: 20,
+    fontSize: 50,
+    //fontStyle: 'italic',
     fontWeight: 'bold',
     alignContent: 'center',
     color: 'black',
-    backgroundColor: '#E7FBEB'
+    justifyContent: 'center',
+
   },
-  qrCodeContainer:{
-    backgroundColor: 'white',
+  text:{
+    fontSize: 40,
     alignItems: 'center',
+    fontWeight: 'normal',
+    color: 'white',
+
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  greenContainer: {
+    backgroundColor: '#60A268',
+    width: '60%',
+    alignItems: 'center',
+    marginBottom: '5%',
+    borderColor: '#60A268',
+    borderRadius: 40,
+    borderWidth: 3,
+    marginTop: '10%',
+  },
+  titleContainer: {
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '10%',
+    //bottom: '7%',
+    marginBottom: '5%',
+    //padding: 10,
+    width: '100%',
+    backgroundColor: '#EEEEEE'
+  },
+
+  qrCodeContainer:{
+    alignItems: 'center',
   },
 });

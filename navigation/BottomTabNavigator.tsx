@@ -20,7 +20,8 @@ export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="TabOne"//the main one will be the tab two
-            tabBarOptions={{activeTintColor: '#60A268', inactiveTintColor: 'gray', labelPosition: "below-icon"}}>
+            tabBarOptions={{activeTintColor: '#60A268', inactiveTintColor: 'gray',
+                labelPosition: "below-icon"}}>
             <BottomTab.Screen
                 name="TabOne"
                 component={TabOneNavigator}
@@ -65,7 +66,7 @@ function TabOneNavigator() {
             <TabOneStack.Screen
                 name="TabOneScreen"
                 component={TabOneScreen}
-                options={{headerTitle: 'Tab One Title', headerShown: false, headerBackTitleVisible: false}}
+                options={{headerTitle: 'QR Code', headerShown: false, headerBackTitleVisible: false}}
             />
         </TabOneStack.Navigator>
     );
@@ -93,7 +94,7 @@ function TabThreeNavigator() {
             <TabThreeStack.Screen
                 name="TabThreeScreen"
                 component={TabThreeScreen}
-                options={{headerTitle: 'Tab Three Title', headerShown: false}}
+                options={{headerTitle: 'Profile', headerShown: false}}
             />
         </TabThreeStack.Navigator>
     );
