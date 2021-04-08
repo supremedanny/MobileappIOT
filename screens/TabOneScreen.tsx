@@ -5,7 +5,7 @@ import * as firebase from "firebase";
 import { Text, View } from '../components/Themed';
 import {useRef, useState} from "react";
 
-export default function TabOneScreen() {
+export default function TabOneScreen({navigation}:any) {
   const user = firebase.auth().currentUser;
   const userID = user?.uid;
   return (
