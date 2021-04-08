@@ -1,33 +1,91 @@
 import * as React from 'react';
 import {Button, Image, Pressable, StyleSheet} from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import {Text, View} from '../components/Themed';
 import * as firebase from "firebase";
+import {Feather, Ionicons,FontAwesome5,Octicons} from '@expo/vector-icons';
 
 export default function TabThreeScreen({navigation}:any) {
     const user = firebase.auth().currentUser;
 
+
     return (
         <View style={styles.container}>
-            <Text style={styles.userName} >{user?.displayName}</Text>
-            <Text style={styles.text} >{user?.email}</Text>
-            {/*Signs out the user and changes screen to Landing.*/}
+            <View style = {styles.accountContainer}>
+                <Text style={styles.userName}>{user?.displayName}</Text>
+                <Text style = {styles.points}>Points: 33</Text>
+                <Image
+                    source = {require('../assets/images/ProfileImage.png')}
+                    style = {styles.profileImage}
+                />
+            </View>
 
-            <Pressable style = {styles.resetPasswordButton}
-                onPress={()=>navigation.navigate("ForgotPassword")}>
-                <Text style={styles.resetPasswordText}>Reset Password</Text>
-            </Pressable>
+            {/** FROM HERE ON OUT - BOXES FOR BUTTONS **/}
 
-            <Pressable style = {styles.signOutButton} onPress={()=>firebase.auth().signOut().then(() => {
-                // Sign-out successful.
-                navigation.navigate("Landing");
-            }).catch((error) => {
-                // An error happened.
-                alert(error.message);
-            })}>
-                <Text style={styles.signOutText}>Sign Out</Text>
-            </Pressable>
+            <View style={styles.boxContainer}>
+
+                <View style={{left: '2%',marginRight: '2%',backgroundColor: '#EEEEEE',}}>
+                    <Feather name="user" size={30} color="#60A268"/>
+                </View>
+
+                <Pressable
+                    style ={styles.button}
+                    onPress={()=> navigation.navigate("Root")}>
+                    <Text style={styles.boxInsideText}>Change Username</Text>
+                </Pressable>
+
+            </View>
+
+            <View style={styles.boxContainer}>
+
+                <View style={{left: '2%',marginRight: '2%',backgroundColor: '#EEEEEE',}}>
+                    <Ionicons name="key-sharp" size={32} color="#60A268" />
+                </View>
+
+                <Pressable
+                    style ={styles.button}
+                    onPress={()=> navigation.navigate("ForgotPassword")}>
+                    <Text style={styles.boxInsideText}>Reset Password</Text>
+                </Pressable>
+
+            </View>
+            <View style={styles.boxContainer}>
+
+                <View style={{left: '2%',marginRight: '4%',backgroundColor: '#EEEEEE',}}>
+                    <FontAwesome5 name="question-circle" size={30} color="#60A268"/>
+                </View>
+
+                <Pressable
+                    style ={styles.button}
+                    onPress={()=> navigation.navigate("Root")}>
+                    <Text style={styles.boxInsideText}>Help</Text>
+                </Pressable>
+
+            </View>
+
+            {/** Separator between all the settings and the sign Out box **/}
+            <View style={styles.separator}></View>
+
+            {/** Sign Out box **/}
+            <View style={styles.signOutBoxContainer}>
+
+                <View style={{left: '8%',marginRight: '4%',backgroundColor: '#EEEEEE',}}>
+                    <Octicons name="sign-out" size={30} color="#60A268" />
+                </View>
+
+                <Pressable
+                    style ={styles.button}
+                    onPress={()=>firebase.auth().signOut().then(() => {
+                        // Sign-out successful.
+                        navigation.navigate("Landing");
+                    }).catch((error) => {
+                        // An error happened.
+                        alert(error.message);
+                    })}>
+                    <Text style={styles.boxInsideText}>Sign Out</Text>
+                </Pressable>
+
+            </View>
 
         </View>
     );
@@ -37,62 +95,74 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        alignContent: 'center',
         backgroundColor: '#EEEEEE'
     },
-    image: {
-        width: '69%',
-        height: '69%',
-        top: '10%',
+    accountContainer: {
+        top: '8%',
+        backgroundColor: '#EEEEEE',
+        height: '20%',
+        width:'100%',
+        borderColor: 'grey',
+        borderBottomWidth: 1,
+    },
+    profileImage: {
+        width: '60%',
+        height: '60%',
+        top: '20%',
+        marginLeft: '-10%',
         resizeMode: 'contain',
         position: 'absolute',
-        backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     userName: {
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: 'bold',
+        top: '30%',
+        marginLeft: '35%',
         color: 'black'
     },
-    text: {
-        textAlign: 'center',
+    points: {
+        left: '40%',
+        top: '30%',
+        position: 'relative',
+        color: 'black',
+        fontWeight: '300',
+        fontSize: 25,
+    },
+    boxContainer:{
+        top: '18%',
+        marginBottom: '2%',
+        backgroundColor: '#EEEEEE',
+        alignItems: 'center',
+        flexDirection: 'row',
+        height: '8%',
+        width:'80%',
+    },
+    signOutBoxContainer:{
+        top: '30%',
+        marginBottom: '2%',
+        backgroundColor: '#EEEEEE',
+        alignItems: 'center',
+        flexDirection: 'row',
+        height: '8%',
+        width:'80%',
+    },
+    button: {
+        backgroundColor: '#EEEEEE',
+        height: '60%',
+        width: '100%',
+        justifyContent: "center",
+    },
+    boxInsideText: {
+        marginLeft: '4%',
         fontSize: 20,
         color: 'black',
     },
-    resetPasswordText: {
-        textAlign: 'center',
-        fontSize: 15,
-        color: '#397433',
-        fontWeight: 'bold',
-    },
-    resetPasswordButton: {
-        textAlign: 'center',
-        color: 'black',
-        borderRadius: 5,
-        top: '3%',
-        justifyContent: 'center',
-        backgroundColor: '#BBDDC1',
-        width: '30%',
-        height: '3%',
-    },
     separator: {
-        marginVertical: 30,
         height: 1,
-        width: '80%',
-    },
-    signOutText: {
-        color: '#397433',
-        fontWeight: 'bold',
-        fontSize: 21,
-    },
-    signOutButton: {
-        borderRadius: 5,
-        backgroundColor: '#BBDDC1',
-        marginLeft: '70%',
-        marginRight: '5%',
-        justifyContent: 'center',
-        width: '23%',
-        height: '3%',
-        alignItems: 'center',
-        top: '-45%',
+        top: '10%',
+        left:'25%',
+        width: '100%',
+        backgroundColor: 'grey',
     }
 });
