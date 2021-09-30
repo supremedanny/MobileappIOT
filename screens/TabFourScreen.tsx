@@ -13,7 +13,6 @@ export default function TabFourScreen({navigation}:any) {
         <View style={styles.container}>
             <View style = {styles.accountContainer}>
                 <Text style={styles.userName}>{user?.displayName}</Text>
-                <Text style = {styles.points}>Points: 33</Text>
                 <Image
                     source = {require('../assets/images/ProfileImage.png')}
                     style = {styles.profileImage}
