@@ -39,7 +39,7 @@ export default function LogInScreen({navigation}) {
                        onPress={() => firebase.auth().signInWithEmailAndPassword(email, password)
                            .then((userCredential) => {
                                // Signed in
-                               const user = userCredential.user;
+
                                navigation.navigate("Root");
                                // ...
                            })

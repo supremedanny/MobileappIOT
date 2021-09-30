@@ -4,6 +4,7 @@ import * as firebase from "firebase";
 import {useState} from "react";
 
 import {Ionicons, Feather, FontAwesome,} from '@expo/vector-icons';
+import {addUserDataOnDatabase} from "../DataBaseCommands";
 
 
 export default function SignUpScreen({navigation}) {
@@ -52,7 +53,6 @@ export default function SignUpScreen({navigation}) {
                                firebase.auth().createUserWithEmailAndPassword(email, password)
                                    .then((userCredential) => {
                                        // Signed in
-                                       const user = userCredential.user;
                                        firebase.auth().currentUser.updateProfile({
                                            displayName: name,
                                        }).then(function () {
@@ -61,6 +61,8 @@ export default function SignUpScreen({navigation}) {
                                            // An error happened.
                                            alert(error.message);
                                        })
+                                       const user = firebase.auth().currentUser;
+                                       addUserDataOnDatabase(user?.uid,user?.displayName,user?.email)
                                        navigation.navigate("Root")
                                        // ...
                                    })

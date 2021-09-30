@@ -1,26 +1,29 @@
 import * as React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, Pressable, StyleSheet} from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import {getBottleCount, getPoints} from "../DataBaseCommands";
+import {useState} from "react";
 
 export default function TabTwoScreen() {
+  let [bottles, setBottles] = useState(getBottleCount());
+  let [points, setPoints] = useState(getPoints());
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Rewards</Text>
 
       <View style = {styles.bottleContainer}>
         <Text style={styles.boxTitleText}>Bottles Recycled</Text>
-        <Text style={styles.numbers}>11</Text>
+        <Text style = {styles.numbers}>{bottles}</Text>
         <Image
             source = {require('../assets/images/waterBottleIcon.png')}
             style = {styles.bottleImage}
         />
       </View>
-
       <View style={styles.pointsContainer}>
         <Text style={styles.boxTitleText}>Points</Text>
-        <Text style={styles.numbers}>33</Text>
+        <Text style={styles.numbers}>{points}</Text>
         <Image
             source = {require('../assets/images/coin.png')}
             style = {styles.coinImage}
@@ -37,7 +40,12 @@ export default function TabTwoScreen() {
         />
 
       </View>
-
+      <Pressable
+          style={styles.RefreshButton}
+          onPress={() => {setBottles(getBottleCount()); setPoints(getPoints());}}
+      >
+        <Text style={styles.RefreshText}>Refresh</Text>
+      </Pressable>
     </View>
   );
 }
@@ -139,5 +147,22 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  RefreshButton: {
+    top: '33%',
+    borderRadius: 10,//how round the button is on the corners
+    borderLeftWidth:60,
+    borderRightWidth: 60,
+    borderTopWidth: 10,
+    borderBottomWidth: 10,
+    borderColor: '#397433',
+    backgroundColor: '#397433',
+    resizeMode: "contain",
+    marginBottom: 200,
+  },
+  RefreshText: {
+    color: '#E5F9E9',
+    fontWeight: 'bold',
+    fontSize: 31,
   },
 });
