@@ -7,9 +7,10 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import TabFourScreen from "../screens/TabFourScreen";
+import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList} from '../types';
+import { AntDesign, Feather ,Octicons, FontAwesome, } from '@expo/vector-icons';
 import TabThreeScreen from "../screens/TabThreeScreen";
-import {BottomTabParamList, TabOneParamList, TabThreeParamList, TabTwoParamList} from '../types';
-import { AntDesign, Feather ,FontAwesome, } from '@expo/vector-icons';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -41,6 +42,14 @@ export default function BottomTabNavigator() {
             <BottomTab.Screen
                 name="TabThree"
                 component={TabThreeNavigator}
+                options={{
+                    tabBarLabel: 'Activities',
+                    tabBarIcon: ({color}) => <Octicons name="graph" size={33} color={color} style={{marginBottom: -3}} />
+                }}
+            />
+            <BottomTab.Screen
+                name="TabFour"
+                component={TabFourNavigator}
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({color}) => <Feather name="user" size={38} color={color}/>
@@ -94,8 +103,24 @@ function TabThreeNavigator() {
             <TabThreeStack.Screen
                 name="TabThreeScreen"
                 component={TabThreeScreen}
-                options={{headerTitle: 'Profile', headerShown: false}}
+                options={{headerTitle: 'Activities', headerShown: false}}
             />
         </TabThreeStack.Navigator>
     );
 }
+
+const TabFourStack = createStackNavigator<TabFourParamList>();
+
+function TabFourNavigator() {
+    return (
+        <TabFourStack.Navigator>
+            <TabFourStack.Screen
+                name="TabFourScreen"
+                component={TabFourScreen}
+                options={{headerTitle: 'Profile', headerShown: false}}
+            />
+        </TabFourStack.Navigator>
+    );
+}
+
+
