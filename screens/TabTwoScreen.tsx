@@ -5,9 +5,27 @@ import { Text, View } from '../components/Themed';
 import {getBottleCount, getPoints} from "../DataBaseCommands";
 import {useState} from "react";
 
+//do not change, this is for a user that signs up which will initially have 0 bottles and points...
+let initialBottles = 0;
+let initialPoints = 0;
+
+/** These values get changed from Log in screen. **/
+export function setInitialPointsAndBottles(_bottles: any, _points: any){
+  initialBottles = _bottles;
+  initialPoints = _points;
+
+  //prepares the methods created in the commands folder such that it doesn't return -2 in the first refresh...
+  getBottleCount();
+  getPoints();
+}
+
 export default function TabTwoScreen() {
-  let [bottles, setBottles] = useState(getBottleCount());
-  let [points, setPoints] = useState(getPoints());
+  let [bottles, setBottles] = useState(initialBottles);
+  let [points, setPoints] = useState(initialPoints);
+
+  //prepares the methods created in the commands folder such that it doesn't return -2 in the first refresh...
+  getBottleCount();
+  getPoints();
 
   return (
     <View style={styles.container}>

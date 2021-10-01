@@ -5,6 +5,7 @@ import * as firebase from "firebase";
 
 //WIP
 import {Ionicons, FontAwesome,} from '@expo/vector-icons';
+import {setInitialPointsAndBottles} from "./TabTwoScreen";
 
 
 export default function LogInScreen({navigation}) {
@@ -38,10 +39,29 @@ export default function LogInScreen({navigation}) {
             <Pressable style={styles.loginButton}
                        onPress={() => firebase.auth().signInWithEmailAndPassword(email, password)
                            .then((userCredential) => {
-                               // Signed in
+                               //can sign in
+                               const userId = firebase.auth().currentUser?.uid
+                               const pointsReference = firebase.database().ref('Users/' + userId);
 
-                               navigation.navigate("Root");
-                               // ...
+                               pointsReference.once('value', (snapshot) => {
+                                   /**
+                                    * Since "once" is calling for under the users id,
+                                    *  it returns some sort of map of children with the users id as their parent.
+                                    *  This map stored in the snapshot contains [Email, bottles, points] as the keys
+                                    *  and the values of them as their respective "values" in the database.
+                                    *  We can then access the child with the key (e.g "Email") using .child('key'),
+                                    *  and then the value of such key with .val().
+                                    **/
+                                   let initBottles = snapshot.child('bottles').val();
+                                   let initPoints = snapshot.child('points').val();
+                                   //sends the data to the rewards tab once it is collected from the snapshot
+                                   //before the user gets to the tab two...
+                                   setInitialPointsAndBottles(initBottles,initPoints);
+                                   //The user will only be able to move on to the tab navigator
+                                   // once the snapshot has collected the info from the database...
+                                   navigation.navigate("Root");
+                               }).then();
+
                            })
                            .catch((error) => {
                                const errorCode = error.code;
