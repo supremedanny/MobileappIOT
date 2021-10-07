@@ -4,7 +4,7 @@ import {Component, useState} from "react";
 import * as firebase from "firebase";
 
 //WIP
-import {Ionicons, FontAwesome,} from '@expo/vector-icons';
+import {Ionicons, FontAwesome, SimpleLineIcons,} from '@expo/vector-icons';
 import {setInitialPointsAndBottles} from "./TabTwoScreen";
 
 
@@ -30,7 +30,7 @@ export default function LogInScreen({navigation}) {
             </View>
 
             <View style={styles.passwordContainer}>
-                <FontAwesome name="lock" size={27} color="grey" />
+                <SimpleLineIcons name="lock" size={24} color="grey" />
                 <TextInput style={styles.passwordInput} placeholder="Password" secureTextEntry={true}
                            onChangeText={password => setPassword(password)
                            }/>

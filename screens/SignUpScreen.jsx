@@ -3,7 +3,7 @@ import {Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity,
 import * as firebase from "firebase";
 import {useState} from "react";
 
-import {Ionicons, Feather, FontAwesome,SimpleLineIcons, MaterialCommunityIcons} from '@expo/vector-icons';
+import {Ionicons, Feather,SimpleLineIcons,} from '@expo/vector-icons';
 import {addUserDataOnDatabase} from "../DataBaseCommands";
 
 
