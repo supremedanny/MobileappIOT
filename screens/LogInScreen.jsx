@@ -23,14 +23,14 @@ export default function LogInScreen({navigation}) {
             <Text style={styles.titleText}>Log In To Your Account</Text>
 
             <View style={styles.emailContainer}>
-                <Ionicons name="mail" size={24} color="black" />
+                <Ionicons name="mail" size={24} color="grey" />
                 <TextInput style={styles.emailInput} placeholder="Email"
                            onChangeText={email => setEmail(email)
                            }/>
             </View>
 
             <View style={styles.passwordContainer}>
-                <FontAwesome name="lock" size={27} color="black" />
+                <FontAwesome name="lock" size={27} color="grey" />
                 <TextInput style={styles.passwordInput} placeholder="Password" secureTextEntry={true}
                            onChangeText={password => setPassword(password)
                            }/>
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         margin: 5,
         height: 45,
         width: '70%',
-        backgroundColor: '#60A268',
+        backgroundColor: '#F3F4F3',
     },
     passwordContainer:{
         flexDirection: 'row',
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     },
     passwordInput: {
         borderRadius: 10,
-        backgroundColor: '#60A268',
+        backgroundColor: '#f3f4f3',
         fontWeight: '700',
         color: '#fff',
         padding: 10,

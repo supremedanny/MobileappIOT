@@ -12,7 +12,7 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
             <Text style = {styles.titleText}>BIN</Text>
 
             <Image
-                source = {require('../assets/images/BIN.png')}
+                source = {require('../assets/images/Bin_with_shadow.png')}
                 style = {styles.image}
             />
 
@@ -36,31 +36,32 @@ export default function LandPageScreen( {navigation,}: StackScreenProps<RootStac
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#60A268',
+        backgroundColor: '#7EAF80',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
     },
     titleText: {
         color: '#E7FBEB',
-        fontSize: 150,
-        top: '-10%',
-        fontWeight: 'bold',
+        fontSize: 90,
+        top: '-5%',
+        fontWeight: '700',
     },
 
     image: {
-        width: '69%',
-        height: '74%',
-        top: '10%',
+        width: '77%',
+        height: '78%',
+        top: '15%',
+        right: '0%',
         resizeMode: 'contain',
         position: 'absolute',
         backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
     loginButton:  {
         top: '31%',
-        borderRadius: 10,//how round the button is on the corners
-        borderLeftWidth: 100,
-        borderRightWidth: 100,
+        borderRadius: 15,//how round the button is on the corners
+        borderLeftWidth: 90,
+        borderRightWidth: 90,
         borderTopWidth: 10,
         borderBottomWidth: 10,
         borderColor: '#E7FBEB',
@@ -74,9 +75,9 @@ const styles = StyleSheet.create({
     },
     SignUpButton: {
         top: '33%',
-        borderRadius: 10,//how round the button is on the corners
-        borderLeftWidth:90,
-        borderRightWidth: 90,
+        borderRadius: 15,//how round the button is on the corners
+        borderLeftWidth:80,
+        borderRightWidth: 80,
         borderTopWidth: 10,
         borderBottomWidth: 10,
         borderColor: '#397433',

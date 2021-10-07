@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {Button, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import * as firebase from "firebase";
 import {useState} from "react";
 
-import {Ionicons, Feather, FontAwesome,} from '@expo/vector-icons';
+import {Ionicons, Feather, FontAwesome,SimpleLineIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 import {addUserDataOnDatabase} from "../DataBaseCommands";
 
 
@@ -15,31 +15,37 @@ export default function SignUpScreen({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Create an account</Text>
+
+            <Image
+                source = {require('../assets/images/BINLOGO.png')}
+                style = {styles.image}
+            />
+
+            <Text style={styles.text}>Create an Account</Text>
 
             <View style={styles.nameContainer}>
-                <Feather name="user" size={24} color="black"/>
+                <Feather name="user" size={24} color="grey" />
                 <TextInput style={styles.name} placeholder="Full Name"
                            onChangeText={name => setName(name)
                            }/>
             </View>
 
             <View style={styles.nameContainer}>
-                <Ionicons name="mail" size={24} color="black"/>
+                <Ionicons name="mail" size={24} color="grey"/>
                 <TextInput style={styles.emailInput} placeholder="Email"
                            onChangeText={email => setEmail(email)
                            }/>
             </View>
 
             <View style={styles.passwordContainer}>
-                <FontAwesome name="lock" size={27} color="black"/>
+                <SimpleLineIcons name="lock" size={24} color="grey" />
                 <TextInput style={styles.passwordInput} placeholder="Password" secureTextEntry={true}
                            onChangeText={password => setPassword(password)
                            }/>
             </View>
 
             <View style={styles.passwordContainer}>
-                <FontAwesome name="lock" size={27} color="black"/>
+                <SimpleLineIcons name="lock" size={24} color="grey" />
                 <TextInput style={styles.passwordInput} placeholder={"Confirm Password"} secureTextEntry={true}
                            onChangeText={password2 => setPassword2(password2)
                            }/>
@@ -95,11 +101,18 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: '-35%',
     },
+    image: {
+        width: '55%',
+        height: '55%',
+        top: '-5%',
+        marginBottom: '-10%',
+        resizeMode: 'contain',
+    },
     text: {
         textAlign: 'center',
         fontSize: 30,
-        marginTop: '45%',
-        marginBottom: '10%',
+        marginTop: '-40%',
+        marginBottom: '5%',
         color: '#397433',
         fontWeight: 'bold',
     },
@@ -109,11 +122,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        position: 'relative',
         marginRight: 10,
     },
     name: {
         borderRadius: 10,
-        backgroundColor: '#60A268',
+        backgroundColor: '#F3F4F3',
         fontWeight: '700',
         color: '#fff',
         padding: 10,
@@ -123,7 +137,7 @@ const styles = StyleSheet.create({
     },
     emailInput: {
         borderRadius: 10,
-        backgroundColor: '#60A268',
+        backgroundColor: '#F3F4F3',
         fontWeight: '700',
         color: '#fff',
         padding: 10,
@@ -140,7 +154,7 @@ const styles = StyleSheet.create({
     },
     passwordInput: { //Also used for the confirm password box...
         borderRadius: 10,
-        backgroundColor: '#60A268',
+        backgroundColor: '#F3F4F3',
         fontWeight: '700',
         color: '#fff',
         //borderWidth: 1,
@@ -155,9 +169,9 @@ const styles = StyleSheet.create({
         fontSize: 21,
     },
     signUpButton: {
-        borderRadius: 10,
+        borderRadius: 15,
         backgroundColor: '#BBDDC1',
-        width: '30%',
+        width: '35%',
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',

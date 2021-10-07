@@ -9,7 +9,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabFourScreen from "../screens/TabFourScreen";
 import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList} from '../types';
-import { AntDesign, Feather ,Octicons, FontAwesome, } from '@expo/vector-icons';
+import { AntDesign, Feather , Octicons} from '@expo/vector-icons';
 import TabThreeScreen from "../screens/TabThreeScreen";
 
 
