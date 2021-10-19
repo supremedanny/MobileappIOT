@@ -89,7 +89,7 @@ function TabTwoNavigator() {
             <TabTwoStack.Screen
                 name="TabTwoScreen"
                 component={TabTwoScreen}
-                options={{headerTitle: 'Tab Two Title', headerShown: false}}
+                options={{headerTitle: 'Rewards', headerShown: false}}
             />
         </TabTwoStack.Navigator>
     );

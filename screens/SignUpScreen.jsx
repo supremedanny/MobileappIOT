@@ -128,8 +128,8 @@ const styles = StyleSheet.create({
     name: {
         borderRadius: 10,
         backgroundColor: '#F3F4F3',
-        fontWeight: '700',
-        color: '#fff',
+        fontWeight: '400',
+        color: 'black',
         padding: 10,
         margin: 5,
         height: 45,
@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
     emailInput: {
         borderRadius: 10,
         backgroundColor: '#F3F4F3',
-        fontWeight: '700',
-        color: '#fff',
+        fontWeight: '400',
+        color: 'black',
         padding: 10,
         margin: 5,
         height: 45,
@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
     passwordInput: { //Also used for the confirm password box...
         borderRadius: 10,
         backgroundColor: '#F3F4F3',
-        fontWeight: '700',
-        color: '#fff',
+        fontWeight: '400',
+        color: 'black',
         //borderWidth: 1,
         padding: 10,
         margin: 5,

@@ -3,6 +3,7 @@ import {Pressable, SafeAreaView, StyleSheet} from 'react-native';
 import QRCode from 'react-native-qrcode-generator';
 import * as firebase from "firebase";
 import { Text, View } from '../components/Themed';
+import { Ionicons } from '@expo/vector-icons';
 import {useRef, useState} from "react";
 
 export default function TabOneScreen({navigation}:any) {
@@ -31,7 +32,8 @@ export default function TabOneScreen({navigation}:any) {
         </View>
 
         <View style={styles.greenContainer}>
-          <Text style={styles.text}>SCAN</Text>
+          <Ionicons name="ios-information-circle-outline" size={28} color="#434242" />
+          <Text style={styles.text}>PRESENT TO SCANNER</Text>
         </View>
 
       </SafeAreaView>
@@ -47,7 +49,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 50,
-    //fontStyle: 'italic',
     fontWeight: 'bold',
     alignContent: 'center',
     color: 'black',
@@ -55,19 +56,22 @@ const styles = StyleSheet.create({
 
   },
   text:{
-    fontSize: 40,
+    fontSize: 18,
     alignItems: 'center',
-    fontWeight: 'normal',
-    color: 'white',
+    fontWeight: '500',
+    color: '#434242',
+    opacity: 1,
 
   },
   greenContainer: {
-    backgroundColor: '#60A268',
+    flexDirection: 'row',
+    backgroundColor: '#d7d6d6',
     width: '60%',
     alignItems: 'center',
     marginBottom: '5%',
-    borderColor: '#60A268',
-    borderRadius: 40,
+    justifyContent: 'center',
+    borderColor: 'transparent',
+    borderRadius: 15,
     borderWidth: 3,
     marginTop: '10%',
   },

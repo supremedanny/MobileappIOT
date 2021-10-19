@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
         top: '-35%',
     },
     emailInput: {
-        fontWeight: '700',
-        color: '#fff',
+        fontWeight: '400',
+        color: 'black',
         borderRadius: 10,
         padding: 10,
         margin: 5,
@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
     passwordInput: {
         borderRadius: 10,
         backgroundColor: '#f3f4f3',
-        fontWeight: '700',
-        color: '#fff',
+        fontWeight: '400',
+        color: 'black',
         padding: 10,
         margin: 5,
         height: 45,
