@@ -11,6 +11,7 @@ import TabFourScreen from "../screens/TabFourScreen";
 import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList} from '../types';
 import { AntDesign, Feather , Octicons} from '@expo/vector-icons';
 import TabThreeScreen from "../screens/TabThreeScreen";
+import {StyleSheet} from "react-native";
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -75,7 +76,7 @@ function TabOneNavigator() {
             <TabOneStack.Screen
                 name="TabOneScreen"
                 component={TabOneScreen}
-                options={{headerTitle: 'QR Code', headerShown: false, headerBackTitleVisible: false}}
+                options={{headerTitle: 'QR Code', headerLeft: ()=>null, headerStatusBarHeight: 150, headerStyle: styles.container, headerTitleStyle: styles.title, headerShown: true, headerBackTitleVisible: false}}
             />
         </TabOneStack.Navigator>
     );
@@ -89,7 +90,7 @@ function TabTwoNavigator() {
             <TabTwoStack.Screen
                 name="TabTwoScreen"
                 component={TabTwoScreen}
-                options={{headerTitle: 'Rewards', headerShown: false}}
+                options={{headerTitle: 'Rewards', headerShown: false, headerLeft: ()=>null}}
             />
         </TabTwoStack.Navigator>
     );
@@ -103,7 +104,7 @@ function TabThreeNavigator() {
             <TabThreeStack.Screen
                 name="TabThreeScreen"
                 component={TabThreeScreen}
-                options={{headerTitle: 'Activities', headerShown: false}}
+                options={{headerTitle: 'Activity', headerStatusBarHeight: 150, headerStyle: styles.container,headerTitleStyle: styles.title, headerShown: true, headerLeft: ()=>null}}
             />
         </TabThreeStack.Navigator>
     );
@@ -122,5 +123,20 @@ function TabFourNavigator() {
         </TabFourStack.Navigator>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#326834',
+
+    },
+    title: {
+        fontSize: 40,
+        fontWeight: 'bold',
+        color: 'white',
+        right: '50%',
+        bottom: '200%',
+    },
+
+});
 
 

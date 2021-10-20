@@ -7,7 +7,7 @@ import { Text, View } from '../components/Themed';
 export default function TabThreeScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Activities</Text>
+            {/*<Text style={styles.title}>Activities</Text>*/}
 
         </View>
     );

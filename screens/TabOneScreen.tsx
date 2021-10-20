@@ -13,7 +13,7 @@ export default function TabOneScreen({navigation}:any) {
       <SafeAreaView style={styles.container}>
 
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>QR Code</Text>
+          {/*<Text style={styles.title}>QR Code</Text>*/}
         </View>
 
         <View style={styles.qrCodeContainer}>
