@@ -130,10 +130,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#F3F4F3',
         fontWeight: '400',
         color: 'black',
+        //borderWidth: 1,
         padding: 10,
         margin: 5,
         height: 45,
-        width: '75%',
+        width: '86%',
     },
     emailInput: {
         borderRadius: 10,
@@ -143,13 +144,14 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 5,
         height: 45,
-        width: '75%',
+        width: '86%',
     },
     passwordContainer: {
         flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 27,
-        marginRight: 30,
+        position: 'relative',
+        marginRight: 10,
 
     },
     passwordInput: { //Also used for the confirm password box...
