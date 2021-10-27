@@ -76,7 +76,7 @@ function TabOneNavigator() {
             <TabOneStack.Screen
                 name="TabOneScreen"
                 component={TabOneScreen}
-                options={{headerTitle: 'QR Code', headerLeft: ()=>null, headerStatusBarHeight: 150, headerStyle: styles.container, headerTitleStyle: styles.title, headerShown: true, headerBackTitleVisible: false}}
+                options={{headerTitle: 'QR Code',headerShown: false }}
             />
         </TabOneStack.Navigator>
     );
