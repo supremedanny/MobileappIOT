@@ -9,7 +9,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabFourScreen from "../screens/TabFourScreen";
 import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList} from '../types';
-import { AntDesign, Feather , Octicons} from '@expo/vector-icons';
+import { AntDesign, Feather , Foundation} from '@expo/vector-icons';
 import TabThreeScreen from "../screens/TabThreeScreen";
 import {StyleSheet} from "react-native";
 
@@ -45,7 +45,7 @@ export default function BottomTabNavigator() {
                 component={TabThreeNavigator}
                 options={{
                     tabBarLabel: 'Activities',
-                    tabBarIcon: ({color}) => <Octicons name="graph" size={33} color={color} style={{marginBottom: -3}} />
+                    tabBarIcon: ({color}) => <Foundation name="graph-bar" size={36} color={color} style={{marginBottom: -3}}  />
                 }}
             />
             <BottomTab.Screen
@@ -53,7 +53,7 @@ export default function BottomTabNavigator() {
                 component={TabFourNavigator}
                 options={{
                     tabBarLabel: 'Profile',
-                    tabBarIcon: ({color}) => <Feather name="user" size={38} color={color}/>
+                    tabBarIcon: ({color}) => <Feather name="user" size={36} color={color}/>
                 }}
             />
         </BottomTab.Navigator>
@@ -104,7 +104,7 @@ function TabThreeNavigator() {
             <TabThreeStack.Screen
                 name="TabThreeScreen"
                 component={TabThreeScreen}
-                options={{headerTitle: 'Activity', headerStatusBarHeight: 150, headerStyle: styles.container,headerTitleStyle: styles.title, headerShown: true, headerLeft: ()=>null}}
+                options={{headerTitle: 'Activity', headerStatusBarHeight: 150, headerStyle: styles.container,headerTitleStyle: styles.title, headerShown: false, headerLeft: ()=>null}}
             />
         </TabThreeStack.Navigator>
     );
