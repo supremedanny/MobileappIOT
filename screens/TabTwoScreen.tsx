@@ -4,6 +4,7 @@ import {Image, Pressable, StyleSheet} from 'react-native';
 import { Text, View } from '../components/Themed';
 import {getBottleCount, getPoints} from "../DataBaseCommands";
 import {useState} from "react";
+import {AntDesign} from "@expo/vector-icons";
 
 //do not change, this is for a user that signs up which will initially have 0 bottles and points...
 let initialBottles = 0;
@@ -28,8 +29,14 @@ export default function TabTwoScreen() {
   getPoints();
 
   return (
+
     <View style={styles.container}>
-      <Text style={styles.title}>Rewards</Text>
+
+      <View style = {styles.greenContainer}>
+        <AntDesign name="gift" color = {'white'}  />
+        <Text style={styles.title}>Rewards</Text>
+        <AntDesign name="gift"  style={styles.giftIcon}/>
+      </View>
 
       <View style = {styles.bottleContainer}>
         <Text style={styles.boxTitleText}>Bottles Recycled</Text>
@@ -38,6 +45,7 @@ export default function TabTwoScreen() {
             source = {require('../assets/images/waterBottleIcon.png')}
             style = {styles.bottleImage}
         />
+
       </View>
       <View style={styles.pointsContainer}>
         <Text style={styles.boxTitleText}>Points</Text>
@@ -74,6 +82,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#EEEEEE'
   },
+
+  greenContainer: {
+    width: '100%',
+    height: '25%',
+    flexDirection: 'row',
+    position: 'absolute',
+    backgroundColor: '#326834'
+  },
+
   imageContainer: {
     flex: 1,
     alignItems: 'center',
@@ -112,9 +129,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
-    top: '10%',
+    top: '20%',
+    left: '10%',
     fontWeight: 'bold',
-    color: 'black'
+    color: 'white'
   },
   boxTitleText:{
     fontSize: 30,
@@ -140,6 +158,7 @@ const styles = StyleSheet.create({
     shadowColor: '#a6a6a6',
     shadowOpacity: 0.3,
     shadowOffset: {width: 0.3, height:0.3},
+    borderRadius: 15,
   },
   pointsContainer:{
     top: '20%',
@@ -150,6 +169,7 @@ const styles = StyleSheet.create({
     shadowColor: '#a6a6a6',
     shadowOpacity: 0.3,
     shadowOffset: {width: 0.3, height:0.3},
+    borderRadius: 15,
   },
   couponsContainer:{
     top: '20%',
@@ -160,6 +180,7 @@ const styles = StyleSheet.create({
     shadowColor: '#a6a6a6',
     shadowOpacity: 0.3,
     shadowOffset: {width: 0.3, height:0.3},
+    borderRadius: 15,
   },
   separator: {
     marginVertical: 30,
@@ -169,8 +190,7 @@ const styles = StyleSheet.create({
   RefreshButton: {
     top: '33%',
     borderRadius: 10,//how round the button is on the corners
-    borderLeftWidth:60,
-    borderRightWidth: 60,
+    borderWidth:60,
     borderTopWidth: 10,
     borderBottomWidth: 10,
     borderColor: '#397433',
@@ -183,4 +203,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 31,
   },
+
+  giftIcon: {
+    fontSize: 45,
+    top: '20%',
+    left: '15%',
+    color: 'white'
+  },
+
 });

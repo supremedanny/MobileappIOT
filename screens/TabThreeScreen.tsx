@@ -74,13 +74,7 @@ export default function TabThreeScreen() {
             <Text style = {styles.numbers}>{ouncesPlastic.toFixed(1)}</Text>
             </View>
 
-            <View style = {styles.turtleCountContainer}>
-                <Text style={styles.turtleCountText}>Turtles Saved</Text>
-                <Image
-                    source = {require('../assets/images/turtle.png')}
-                    style = {styles.turtleImage}
-                />
-            </View>
+
 
             <Pressable
                 style={styles.RefreshButton}
@@ -123,12 +117,6 @@ const styles = StyleSheet.create({
         color: 'white'
     },
 
-    turtleIcon: {
-        fontSize: 50,
-        left: '50%',
-        color: 'white'
-    },
-
     totalPointsText:{
         fontSize: 17,
         fontWeight: '700',
@@ -147,12 +135,6 @@ const styles = StyleSheet.create({
         //justifyContent: 'center',
     },
 
-    turtleCountText:{
-        fontSize: 20,
-        fontWeight: '700',
-        marginLeft: '5%',
-        color: 'white'
-    },
 
     pointsContainer:{
         top: '20%',
@@ -253,31 +235,6 @@ const styles = StyleSheet.create({
         backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
     },
 
-    //Container: Turtles Saved
-    turtleCountContainer:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        position: 'absolute',
-        top: '76%',
-        borderRadius: 20,
-        backgroundColor: '#7AAEFC',
-        height: 75,
-        width:'85%',
-        shadowColor: 'black',
-        shadowOpacity: 0.2,
-        shadowRadius: 7,
-    },
-
-    // https://www.flaticon.com/premium-icon/turtle_1187387?term=turtle&page=3&position=13&page=3&position=13&related_id=1187387&origin=search
-    turtleImage: {
-        width: 40,
-        height: 40,
-        left: '81%',
-        resizeMode: 'contain',
-        position: 'absolute',
-        backgroundColor: undefined,//only add a color to see where the border of the image really is, like a "hitbox"
-    },
 
     numbers:{
         fontSize: 43,
